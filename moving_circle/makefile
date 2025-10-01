@@ -14,12 +14,16 @@ LIBS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf
 SRC = main.c
 
 # Règle par défaut : compile tout
-all: $(TARGET)
+all: $(TARGET).exe
 
 # Compilation
-$(TARGET): $(SRC)
-	$(CC) $(CFLAGS) -o $(TARGET) $(SRC) $(LIBS)
+$(TARGET).exe: $(SRC)
+	$(CC) $(CFLAGS) -o $@ $(SRC) $(LIBS)
 
 # Nettoyage des fichiers générés
 clean:
 	rm -f $(TARGET).exe
+
+# Compilation + exécution
+run: $(TARGET).exe
+	./$(TARGET).exe

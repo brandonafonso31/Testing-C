@@ -8,7 +8,7 @@
 #define WINDOW_HEIGHT 480
 #define CIRCLE_RADIUS 20
 #define SPEED 200.0f // pixels par seconde
-#define FPS 60
+#define FPS 165
 #define FPS_HISTORY 30
 #define NUM_BONUS 5
 
@@ -19,7 +19,7 @@ typedef struct {
 } FPSCounter;
 
 void FPSCounter_Init(FPSCounter* counter) {
-    for (int i = 0; i < FPS_HISTORY; i++) counter->history[i] = 1.0 / FPS; // init à 60 FPS
+    for (int i = 0; i < FPS_HISTORY; i++) counter->history[i] = 1.0 / FPS; // init à 165 FPS
     counter->index = 0;
 }
 
